@@ -24,10 +24,10 @@ jobs:
         run: pnpm install --frozen-lockfile
       
       - name: Build hooks
-        run: npm run build-hooks
+        run: pnpm --filter @toy-element/hooks build --if-present
 
       - name: Run tests
-        run: npm run test
+        run: pnpm -r test --if-present
 
   build:
     name: Build docs
